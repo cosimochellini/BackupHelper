@@ -1,7 +1,9 @@
 const fs = require('fs');
+require('isomorphic-fetch'); // or another library of choice.
 const fse = require('fs-extra');
 const zipdir = require('zip-dir');
 const dateFormat = require('dateformat');
+const Dropbox = require('dropbox').Dropbox;
 
 const folderController = {};
 
@@ -27,10 +29,27 @@ folderController.copyFolder = (folderFrom, folderTo) => {
 }
 
 
-folderController.zipFolder = (folder) => {
+folderController.zipFolder = (folder, settings) => {
     zipdir(folder, { saveTo: folder + '.zip' }, function (err, buffer) {
-        // `buffer` is the buffer of the zipped file
-        // And the buffer was saved to `~/myzip.zip`
+
+        const dbx = new Dropbox({ clientId: settings.dropbox.key, accessToken: 'odoutsvecp31wru' });
+
+        const file = {
+            contents: buffer,
+            mute: false,
+            path: settings.dropbox.outputDirectory + _getCurrentBackupName() + '.zip',
+            mode: {
+                add: () => { }
+            },
+            autorename: false
+        };
+
+        dbx.filesUpload(file).then((result, error) => {
+            console.log(result, error);
+        })
+
+
+
     });
 
 }

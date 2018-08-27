@@ -1,5 +1,5 @@
 {
-    "version": "0.0.2",
+    "version": "0.0.5",
     "outputPath": {
         "Desktop": "C:\\Users\\cosimo\\Desktop"
     },
@@ -10,5 +10,9 @@
         {
             "path": "D:\\Documenti\\RimborsoSpese"
         }
-    ]
+    ],
+    "dropbox": {
+        "outputDirectory": "home/Backup",
+        "key": "2t3xlcfie8f1ph3"
+    }
 }

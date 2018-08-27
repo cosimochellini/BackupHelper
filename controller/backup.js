@@ -10,7 +10,7 @@ backupController.execute = (settings, dirname) => {
         outputFolder = folderController.copyFolder(element.path, settings.outputPath)
     });
 
-    folderController.zipFolder(outputFolder);
+    folderController.zipFolder(outputFolder, settings);
 };
 
 module.exports = backupController;
