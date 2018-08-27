@@ -1,1 +1,14 @@
-{}
+{
+    "version": "0.0.2",
+    "outputPath": {
+        "Desktop": "C:\\Users\\cosimo\\Desktop"
+    },
+    "entryPath": [
+        {
+            "path": "D:\\Documenti\\Curriculum Vitae"
+        },
+        {
+            "path": "D:\\Documenti\\RimborsoSpese"
+        }
+    ]
+}
