@@ -1,10 +1,17 @@
-const fse = require('fs-extra')
+const folderController = require("./folder");
 
 let backupController = {};
 
-
 backupController.execute = (settings, dirname) => {
 
+    let outputFolder;
 
-}
+    settings.entryPath.forEach(element => {
+        outputFolder = folderController.copyFolder(element.path, settings.outputPath)
+    });
+
+    folderController.zipFolder(outputFolder);
+};
+
+module.exports = backupController;
 
