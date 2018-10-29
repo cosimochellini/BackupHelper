@@ -11,7 +11,8 @@ backupController.execute = (settings, dirname) => {
     });
 
     folderController.zipFolder(outputFolder, settings);
+
+    return true;
 };
 
-module.exports = backupController;
-
+module.exports = backupController;  
