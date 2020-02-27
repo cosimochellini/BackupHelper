@@ -12,7 +12,7 @@
   "dependencies": {
     "dateformat": "^3.0.3",
     "dropbox": "^4.0.9",
-    "fs-extra": "^7.0.0",
+    "fs-extra": "^7.0.1",
     "isomorphic-fetch": "^2.2.1",
     "zip-dir": "^1.0.2"
   }
